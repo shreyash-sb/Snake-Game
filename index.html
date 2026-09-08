@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Snake Game</title>
+  
+  <!-- Friendly, modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="game-container">
+    
+    <!-- Top Bar: Logo, Scores & Theme/Sound/Restart Controls -->
+    <header class="top-bar">
+      <div class="logo">
+        <span class="logo-emoji">🐍</span>
+        <h1>Snake</h1>
+      </div>
+
+      <div class="score-board">
+        <div class="score-card">
+          <span class="score-label">SCORE</span>
+          <span id="score" class="score-val">0</span>
+        </div>
+        <div class="score-card best-card">
+          <span class="score-label">BEST 🏆</span>
+          <span id="highScore" class="score-val">0</span>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button id="themeBtn" class="icon-btn" title="Toggle Dark / Light Theme (T)" aria-label="Toggle Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+        <button id="soundBtn" class="icon-btn" title="Toggle Sound (M)" aria-label="Toggle Sound">
+          <span id="soundIcon">🔊</span>
+        </button>
+        <button id="restartBtn" class="action-btn" title="Restart (R)">
+          Restart
+        </button>
+      </div>
+    </header>
+
+    <!-- Large Scaled-up Game Board -->
+    <div class="board-wrapper">
+      <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+      <!-- Sweet Start / Pause / Game Over Overlay -->
+      <div id="overlay" class="overlay">
+        
+        <!-- 1. Sweet Start State with Instructions Inside -->
+        <div id="startBox" class="overlay-box start-box">
+          <div class="sweet-avatar">
+            <span class="mascot-snake">🐍</span>
+            <span class="mascot-apple">🍎</span>
+          </div>
+          <h2 class="sweet-title">Hungry Snake!</h2>
+          <p class="sweet-subtitle">Munch delicious apples & grow as long as you can!</p>
+
+          <!-- Instructions Shown Before Starting Game -->
+          <div class="instructions-card">
+            <div class="instruction-row">
+              <span class="inst-label">🎮 Move:</span>
+              <span class="inst-keys"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or <kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span>
+            </div>
+            <div class="instruction-row">
+              <span class="inst-label">⏸️ Pause:</span>
+              <span class="inst-keys"><kbd>Space</kbd> or <kbd>P</kbd></span>
+            </div>
+            <div class="instruction-row">
+              <span class="inst-label">🔄 Restart:</span>
+              <span class="inst-keys"><kbd>R</kbd></span>
+            </div>
+            <div class="instruction-row">
+              <span class="inst-label">☀️ Theme:</span>
+              <span class="inst-keys"><kbd>T</kbd></span>
+            </div>
+          </div>
+
+          <button id="startBtn" class="sweet-play-btn">
+            <span>Play Now</span>
+            <span class="btn-arrow">▶</span>
+          </button>
+        </div>
+
+        <!-- 2. Pause State -->
+        <div id="pauseBox" class="overlay-box hidden">
+          <div class="status-icon">⏸️</div>
+          <h2>Game Paused</h2>
+          <p>Press Space or button to continue</p>
+          <button id="resumeBtn" class="sweet-play-btn">Resume Game</button>
+        </div>
+
+        <!-- 3. Game Over State -->
+        <div id="gameOverBox" class="overlay-box hidden">
+          <div id="trophyBanner" class="trophy-badge hidden">✨ New High Score! ✨</div>
+          <div class="status-icon">💥</div>
+          <h2>Game Over!</h2>
+          <div class="game-over-stats">
+            <div class="stat-pill">
+              <span class="stat-lbl">Final Score</span>
+              <span id="finalScore" class="stat-num">0</span>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-lbl">Personal Best</span>
+              <span id="finalBest" class="stat-num">0</span>
+            </div>
+          </div>
+          <button id="playAgainBtn" class="sweet-play-btn">Play Again 🔄</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Clean Mobile Touch Controls (shown on touch/phones) -->
+    <div class="touch-controls">
+      <button class="t-btn up" data-dir="up">▲</button>
+      <div class="t-row">
+        <button class="t-btn left" data-dir="left">◀</button>
+        <button class="t-btn down" data-dir="down">▼</button>
+        <button class="t-btn right" data-dir="right">▶</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
