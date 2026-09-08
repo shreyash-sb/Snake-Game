@@ -39,9 +39,7 @@ No installation or build step is required.
 
 Open `index.html` in any modern web browser.
 
-```
-
-## 🎯 Future Improvements
+### 🎯 Future Improvements
 
 Possible additions include:
 
@@ -91,4 +89,4 @@ Snake Game/
 
 ---
 
-**Eat. Grow. Survive. 🐍**
+## Eat. Grow. Survive. 🐍
