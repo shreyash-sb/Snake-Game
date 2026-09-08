@@ -31,7 +31,7 @@ A simple and responsive browser-based Snake game built with **HTML5 Canvas, CSS3
 
 **Mobile:** Swipe on the game board or use the on-screen D-Pad.
 
-### 🎯 Future Improvements
+## 🎯 Future Improvements
 
 Possible additions include:
 
@@ -79,6 +79,6 @@ Snake Game/
   * Local Storage
   * Web Audio API
 
----
-
 ## Eat. Grow. Survive. 🐍
+
+---
