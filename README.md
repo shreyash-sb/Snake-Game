@@ -83,6 +83,3 @@ You can tweak the core game settings directly in [`script.js`](script.js):
 - **Movement Speed**: Adjust `TICK_SPEED` (default is `105ms` per step; lower is faster).
 
 ---
-
-## 📄 License
-MIT License. Free to use, modify, and distribute.
