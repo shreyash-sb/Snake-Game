@@ -31,14 +31,6 @@ A simple and responsive browser-based Snake game built with **HTML5 Canvas, CSS3
 
 **Mobile:** Swipe on the game board or use the on-screen D-Pad.
 
-## 🚀 How to Run
-
-No installation or build step is required.
-
-### Directly Open
-
-Open `index.html` in any modern web browser.
-
 ### 🎯 Future Improvements
 
 Possible additions include:
